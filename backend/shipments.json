@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "product": "Microprocessors",
+    "route": "Strait of Hormuz",
+    "status": "High Risk",
+    "lat": 26.5,
+    "lng": 56.2,
+    "riskLevel": 9
+  },
+  {
+    "id": 2,
+    "product": "Crude Oil",
+    "route": "Suez Canal",
+    "status": "Safe",
+    "lat": 29.9,
+    "lng": 32.5,
+    "riskLevel": 2
+  },
+  {
+    "id": 3,
+    "product": "Medical Supplies",
+    "route": "Bab-el-Mandeb",
+    "status": "High Risk",
+    "lat": 12.6,
+    "lng": 43.3,
+    "riskLevel": 8
+  },
+  {
+    "id": 4,
+    "product": "Automobile Parts",
+    "route": "Panama Canal",
+    "status": "Safe",
+    "lat": 9.1,
+    "lng": -79.9,
+    "riskLevel": 1
+  },
+  {
+    "id": 5,
+    "product": "Liquefied Gas",
+    "route": "South China Sea",
+    "status": "High Risk",
+    "lat": 15,
+    "lng": 115,
+    "riskLevel": 7
+  },
+  {
+    "id": 6,
+    "product": "Agricultural Grains",
+    "route": "Black Sea",
+    "status": "High Risk",
+    "lat": 44,
+    "lng": 35,
+    "riskLevel": 9
+  }
+]
