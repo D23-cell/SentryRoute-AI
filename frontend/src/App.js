@@ -20,6 +20,7 @@ import {
 } from "recharts";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const BACKEND_URL = "https://sentryroute-ai.onrender.com";
 
 const RiskDashboard = ({ data }) => {
   const chartData = data.reduce((acc, item) => {
@@ -108,7 +109,7 @@ function App() {
 
   const fetchDashboardData = useCallback(async () => {
     try {
-      const shipRes = await fetch("http://localhost:5000/api/shipments");
+      const shipRes = await fetch(`${BACKEND_URL}/api/shipments`);
       setShipments(await shipRes.json());
     } catch (err) {
       console.error("Fetch Error:", err);
@@ -117,7 +118,7 @@ function App() {
 
   const fetchLogs = useCallback(async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/logs");
+      const res = await fetch(`${BACKEND_URL}/api/logs`);
       const data = await res.json();
       setAuditLogs(data.reverse());
     } catch (err) {
@@ -127,7 +128,7 @@ function App() {
 
   const verifyBlockchain = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/verify-chain");
+      const res = await fetch(`${BACKEND_URL}/api/verify-chain`);
       const data = await res.json();
       alert(data.message);
     } catch (err) {
@@ -163,7 +164,7 @@ function App() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      socketRef.current = io("http://localhost:5000");
+      socketRef.current = io(BACKEND_URL);
       socketRef.current.on("live-news-update", (msg) =>
         setNews((prev) => [msg, ...prev.slice(0, 4)]),
       );
@@ -176,7 +177,7 @@ function App() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/api/login", {
+    const res = await fetch(`${BACKEND_URL}/api/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
@@ -194,7 +195,7 @@ function App() {
 
   const handleVerifyOTP = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/api/verify-otp", {
+    const res = await fetch(`${BACKEND_URL}/api/verify-otp`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ otp, username, role: userRole }),
@@ -225,7 +226,7 @@ function App() {
 
   const handleReroute = async (item) => {
     try {
-      const res = await fetch("http://localhost:5000/api/execute-reroute", {
+      const res = await fetch(`${BACKEND_URL}/api/execute-reroute`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

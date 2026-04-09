@@ -1,5 +1,8 @@
 # 🛡️ SentryRoute AI: Strategic Intelligence & Logistics Dashboard
 
+> **Live Mission Control:** [https://sentry-frontend-url.onrender.com](https://sentry-frontend-url.onrender.com)  
+> *(Note: Replace the link above with your actual Frontend URL once deployed)*
+
 **SentryRoute AI** is a secure, high-performance web application designed for real-time monitoring and tactical rerouting of global maritime and land-based logistics. It integrates **Blockchain Technology**, **Role-Based Access Control (RBAC)**, and **Dynamic Risk Assessment** to ensure data integrity and operational superiority.
 
 ## 🚀 Core Mission Features
@@ -27,38 +30,39 @@
 ## 💻 Tech Stack
 
 * **Frontend:** React.js, Recharts (Tactical Analytics), React-Leaflet (Strategic Mapping)
-* **Backend:** Node.js, Express.js
+* **Backend:** Node.js, Express.js (Hosted on Render)
 * **Database:** LowDB (Persistent JSON-based storage)
 * **Security:** CryptoJS (SHA-256 Hashing), JWT, Socket.io (Real-time Intelligence)
-
 
 ---
 
 ## 🔐 Access Console (Testing Credentials)
 
-To access the SentryRoute AI Dashboard, use the following tactical credentials based on the required clearance level:
+To access the SentryRoute AI Dashboard, use the following tactical credentials:
 
-| Role          | Username | Password    | Permission Level                |
-|---------------|----------|-------------|---------------------------------|
+| Role          | Username | Password      | Permission Level                |
+|---------------|----------|---------------|---------------------------------|
 | **Commander** | `admin`  | `password123` | Full Access (Blockchain, Risk)  |
-| **Analyst** | `user`   | `user123`   | View Only (Tactical Monitoring) |
+| **Analyst** | `user`   | `user123`     | View Only (Tactical Monitoring) |
 
-> **Note:** These are pre-configured credentials for demonstration purposes. In a production environment, use hashed passwords stored in a secure DB.
+> **Security Note:** OTP for 2FA is logged in the Backend Server Console during live sessions.
 
 ---
 
-## 🛠️ Deployment & Execution
+## 🛠️ Installation & Local Execution
 
 1. **Clone the Command Center:**
    ```bash
-   git clone [https://github.com/D23-cell/SentryRoute-AI.git]
+   git clone [https://github.com/D23-cell/SentryRoute-AI.git](https://github.com/D23-cell/SentryRoute-AI.git)
 
-2. Initialize Systems:  
-# Install dependencies in both /frontend and /backend
+
+2. Initialize Backend:
+cd backend
 npm install
+npm start
 
-3. Launch Mission:
-# Run backend server
-node server.js
-# Start frontend dashboard
+
+3. Initialize Frontend:
+cd frontend
+npm install
 npm start
